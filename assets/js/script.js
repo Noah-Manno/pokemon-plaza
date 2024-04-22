@@ -18,5 +18,19 @@ function handleSubmitPokemon() {
 }
 
 function handleFetchPokemonData(pokemon) {
-    let url = ""
+    let url = `https://pokeapi.co/api/v2/pokemon/${pokemon}/`
+    fetch(url) 
+    .then(function (response) {
+        if (!response.ok) {
+            throw response.json();
+        }
+            return response.json();
+    })
+    .then(function(data) {
+        localStorage.setItem('currentPokemonData', JSON.stringify(data));
+        window.location.href = 'results.html'
+    })
+    .catch(function(error) {
+        console.error('Error fetching data:', error);
+    });
 }
