@@ -1,0 +1,68 @@
+:root {
+    --backgroundDark: #040405;
+    --backgroundBlue: #0e149f;
+    --navbarfont: "Orbitron", sans-serif;
+    --openfont: "Open Sans", sans-serif;
+    --gradient: linear-gradient(var(--backgroundDark),var(--backgroundBlue));
+}
+
+body {
+    background: var(--gradient);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.logo {
+    width: 250px;
+}
+
+nav {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.logo-nav {
+    height: 2vh;
+}
+
+.right,
+.left {
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul a {
+    font-size: 1.5em;
+    font-family: var(--navbarfont);
+}
+nav ul a:hover {
+    color: blueviolet;
+}
+
+.carousel .carousel-item {
+    width: 250px;
+    height: 250px;
+}
+.sidenav {
+    background: var(--gradient);
+}
+
+.sidenav li>a {
+    font-size: 1.3em;
+    color: white;
+    font-family: var(--navbarfont);
+}
+
+nav ul li.active {
+    text-decoration: gray underline;
+}
+
+h1 {
+    color: white;
+    font-family: var(--openfont);
+    font-size: 2em;
+    text-align: center;
+    font-weight: 200;
+}

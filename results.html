@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Plaza</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/results.css">
+</head>
+<body>
+<!-- NAVBAR -->
+    <nav class="logo-nav">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center"><img class="logo" src="./assets/images/pokeplazalogo.png" alt="pokeplaza logo"></a>
+        </div>
+    </nav>
+    <nav class="links-nav">
+        <div class="nav-wrapper">
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Your Team</a></li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">Stat Calculator</a></li>
+                <li class="active"><a href="#">Pokédex</a></li>
+            </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Your Team</a></li>
+        <li><a href="#">Stat Calculator</a></li>
+        <li><a href="#">Pokédex</a></li>
+      </ul>
+
+
+<h1>Your Ultimate Pokémon Companion Site</h1>
+
+<div class="row">
+    <div class="col s12">
+        <ul id="tabs" class="tabs">
+            <li class="tab col s12"><a class="active" href="#test1">Bulbasaur</a></li>
+        </ul>
+      </div>
+    <div id="test1" class="col s12">
+
+        <div class="results-container row">
+            <div class="basic-info col s8 offset-s2 m5 offset-m0 l3">
+                <div class="sprite-container">
+                    <img class="sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="pokemon sprite">
+                </div>
+                <h2>Bulbasaur</h2>
+                <div class="types row">
+                    <h3 class="grass col s4 offset-s1">Grass</h3>
+                    <h3 class="poison col s4 offset-s2">Poison</h3>
+                </div>
+                <div class="abilities">
+                    <h4>Abilities</h4>
+                    <ol>
+                        <li>Blaze</li>
+                        <li>Solar-Power</li>
+                    </ol>
+                </div>
+            </div> 
+                <div class="detail-info col s12 m6">     
+            </div>
+        </div>
+    </div>
+  </div>
+    
+    <script src="./assets/js/jquery-3.7.1.slim.min.js"></script>
+    <script src="./assets/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('.carousel').carousel();
+        });
+
+        $(document).ready(function(){
+        $('.sidenav').sidenav();
+        });
+
+        $(document).ready(function(){
+        $('.tabs').tabs();
+        });
+    </script>
+    <script src="./assets/js/results.js"></script>
+</body>
+</html>
