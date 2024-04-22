@@ -1,0 +1,90 @@
+:root {
+    --backgroundDark: #040405;
+    --backgroundBlue: #0e149f;
+    --navbarfont: "Orbitron", sans-serif;
+    --openfont: "Open Sans", sans-serif;
+    --gradient: linear-gradient(var(--backgroundDark),var(--backgroundBlue));
+}
+
+body {
+    background: var(--gradient);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.logo {
+    width: 250px;
+}
+
+nav {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.logo-nav {
+    height: 5vh;
+}
+
+.right,
+.left {
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul a {
+    font-size: 1.5em;
+    font-family: var(--navbarfont);
+}
+
+.carousel .carousel-item {
+    width: 250px;
+    height: 250px;
+}
+
+.sidenav {
+    background: var(--gradient);
+}
+
+.sidenav li>a {
+    font-size: 1.3em;
+    color: white;
+}
+
+.search-bar {
+    background-color: var(--backgroundBlue);
+}
+
+h1 {
+    color: white;
+    font-family: var(--openfont);
+    font-size: 2em;
+    text-align: center;
+    font-weight: 200;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.poke-search {
+    color: white;
+    font-family: var(--navbarfont);
+    font-size: 1.5em;
+    text-align: center;
+    background-color: transparent;
+    border: 1px dashed black;
+    border-radius: 16px;
+    padding: 20px 40px;
+}
+
+.poke-search:hover {
+    background-color: #040405;
+    cursor: pointer;
+}
+
+nav ul li.active {
+    text-decoration: gray underline;
+}
