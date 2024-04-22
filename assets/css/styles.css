@@ -23,7 +23,7 @@ nav {
 }
 
 .logo-nav {
-    height: 5vh;
+    height: 2vh;
 }
 
 .right,
@@ -37,12 +37,14 @@ nav ul a {
     font-size: 1.5em;
     font-family: var(--navbarfont);
 }
+nav ul a:hover {
+    color: blueviolet;
+}
 
 .carousel .carousel-item {
     width: 250px;
     height: 250px;
 }
-
 .sidenav {
     background: var(--gradient);
 }
@@ -77,8 +79,12 @@ h1 {
     text-align: center;
     background-color: transparent;
     border: 1px dashed black;
-    border-radius: 16px;
     padding: 20px 40px;
+    margin-bottom: 50px;
+}
+
+.search-bar {
+    border-radius: 36px;
 }
 
 .poke-search:hover {
@@ -88,4 +94,15 @@ h1 {
 
 nav ul li.active {
     text-decoration: gray underline;
+}
+
+.input-field input[type=search] {
+    color: white;
+}
+
+.input-field input[type=search]:focus:not(.browser-default) {
+    border-radius: 36px;
+}
+input[type=search]:not(.browser-default) {
+    border-radius: 36px;
 }
