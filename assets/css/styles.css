@@ -50,6 +50,7 @@ nav ul a {
 .sidenav li>a {
     font-size: 1.3em;
     color: white;
+    font-family: var(--navbarfont);
 }
 
 .search-bar {
