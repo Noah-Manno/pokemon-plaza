@@ -57,8 +57,20 @@ container.append(tabContainer)
             let basicInfo = $('<div class="basic-info col s8 offset-s2 m5 offset-m0 l3">')
             let spriteContainer = $('<div class="sprite-container">')
             let sprite = $(`<img class="sprite" src="${data.sprites.front_default}">`)
+            let nameOfPokemon = $(`<h2>${data.name}</h2>`)
+            let types = $('<div class="types row">')
+            let typesOfPokemon = data.types
+            if (Array.isArray(typesOfPokemon)) {
+                typesOfPokemon.forEach(type => {
+                    let typeName = type.type.name
+                    let typeIcon = $(`<h3 class="${typeName} col s6">${typeName}</h3>`)
+                    types.append(typeIcon);
+                });
+            } 
             spriteContainer.append(sprite);
             basicInfo.append(spriteContainer);
+            basicInfo.append(nameOfPokemon);
+            basicInfo.append(types);
             resultsContainer.append(basicInfo);
             newPage.append(resultsContainer);
             container.append(newPage)

@@ -44,6 +44,23 @@ h3 {
     background-color: purple;
 }
 
+.fire {
+    background-color: red;
+}
+
+.water {
+    background-color: aqua;
+}
+
+.normal {
+    background-color: gray;
+}
+
+.flying {
+    background-color: white;
+    color: black;
+}
+
 h4 {
     color: white;
     font-family: var(--navbarfont);
