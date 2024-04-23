@@ -46,13 +46,14 @@
 
 <h1>Your Ultimate Pokémon Companion Site</h1>
 
-<div class="row">
-    <div class="col s12">
+<div id="container" class="row">
+    <!-- <div class="col s12">
         <ul id="tabs" class="tabs">
-            <li class="tab col s12"><a class="active" href="#test1">Bulbasaur</a></li>
+            <li class="tab col s12"><a class="active" href="#search"></a></li>
+            <li class="tab col s12"><a href="#notsearch"></a></li>
         </ul>
-      </div>
-    <div id="test1" class="col s12">
+    </div>
+    <div id="search" class="col s12">
 
         <div class="results-container row">
             <div class="basic-info col s8 offset-s2 m5 offset-m0 l3">
@@ -61,8 +62,8 @@
                 </div>
                 <h2>Bulbasaur</h2>
                 <div class="types row">
-                    <h3 class="grass col s4 offset-s1">Grass</h3>
-                    <h3 class="poison col s4 offset-s2">Poison</h3>
+                    <h3 class="grass col s5 ">Grass</h3>
+                    <h3 class="poison col s5 offset-s2">Poison</h3>
                 </div>
                 <div class="abilities">
                     <h4>Abilities</h4>
@@ -71,10 +72,11 @@
                         <li>Solar-Power</li>
                     </ol>
                 </div>
-            </div> 
+            </div>
                 <div class="detail-info col s12 m7 l9"> 
                     <div class="row">
-                        <ul class="col s12 l6">
+               
+                        <ul class="stats col s12 l6">
                             <div class="stat-header">
                                 <h2>Stats</h2>
                             </div>
@@ -133,12 +135,127 @@
                                 </div>
                             </li>
                         </ul>
+
+      
+                        <div class="moves col s12 l6">
+                            <div class="stat-header">
+                                <h2>Moves</h2>
+                            </div>
+                            <table class="centered highlight">
+                                <thead>
+                                <tr>
+                                    <th>Move</th>
+                                    <th>Level</th>
+                                    <th>Method of Learning</th>
+                                </tr>
+                                </thead>
+                        
+                                <tbody>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                        
+                                </tbody>
+                            </table>
+                        </div>
+
+
                     </div>
                 </div>
         </div>
 
     </div>
+    <div id="notsearch" class="col s12"></div> -->
   </div>
+
+  <h5 id="instructions">Choose A Pokemon to Get Started!</h5>
     
     <script src="./assets/js/jquery-3.7.1.slim.min.js"></script>
     <script src="./assets/js/materialize.min.js"></script>
@@ -155,6 +272,6 @@
         $('.tabs').tabs();
         });
     </script>
-    <script src="./assets/js/results.js"></script>
+    <script src="./assets/js/pokedex.js"></script>
 </body>
 </html>
