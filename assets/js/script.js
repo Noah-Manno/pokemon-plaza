@@ -12,7 +12,7 @@ function handleSubmitPokemon() {
     // If it has not been searched before, add it to the search history and update storage
     if (!searchHistory.includes(newPokemonSearch)) {
         searchHistory.push(newPokemonSearch);
-        localStorage.setItem('searchHistory', searchHistory);
+        localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
     }
     handleFetchPokemonData(newPokemonSearch);
 }
