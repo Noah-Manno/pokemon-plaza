@@ -6,6 +6,43 @@
     --gradient: linear-gradient(var(--backgroundDark),var(--backgroundBlue));
 }
 
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.poke-search {
+    color: white;
+    font-family: var(--navbarfont);
+    font-size: 1.5em;
+    text-align: center;
+    background-color: transparent;
+    border: 1px dashed black;
+    padding: 20px 40px;
+    margin-bottom: 50px;
+}
+
+.search-bar {
+    border-radius: 36px;
+    background-color: #0e149f;
+}
+
+.poke-search:hover {
+    background-color: #040405;
+    cursor: pointer;
+}
+
+.input-field input[type=search] {
+    color: white;
+}
+
+.input-field input[type=search]:focus:not(.browser-default) {
+    border-radius: 36px;
+}
+input[type=search]:not(.browser-default) {
+    border-radius: 36px;
+}
+
 .sprite-container {
     width: 100%;
     display: flex;
@@ -135,31 +172,4 @@ tr {
 
 .moves:hover {
     border: 1px solid white;
-}
-
-.return-home {
-    text-align: center;
-    background: transparent;
-    padding: 10px 20px;
-    font-family: var(--navbarfont);
-    font-size: 20px;
-    color: white;
-}
-
-.return-home:hover {
-    cursor: pointer;
-    background: var(--backgroundBlue);
-}
-
-.button-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-h5 {
-    font-family: var(--navbarfont);
-    color: white;
-    text-align: center;
-    font-weight: 400;
 }
