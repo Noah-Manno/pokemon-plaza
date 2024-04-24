@@ -74,9 +74,13 @@ h3 {
     border-radius: 16px;
 }
 
+.types {
+    display: flex;
+    justify-content: center;
+}
+
 .type {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important; 
+    padding: 10px 50px;
 }
 
 .grass {
