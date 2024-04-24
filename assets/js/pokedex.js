@@ -23,9 +23,12 @@ const speedElVal = $('#speedVal')
 const speedEl = $('#speed')
 const movesTableBodyEl = $('#moves-table')
 
+// declaring the tabs list
+let tabs = $('#tabs')
+
 // Grab pokemon data from local storage 
 let data = JSON.parse(localStorage.getItem('currentPokemonData'))
-
+let serchHistory = JSON.parse(localStorage.getItem('searchHistory'))
 // Adds the pokemon data to the page
 function handleAddingPokemonData(data) {
     console.log(data)
@@ -89,12 +92,38 @@ moves.forEach(move => {
 });
 }
 
+
+function handleAddingTabs(searchHistory) {
+    for (let index = 0; index < searchHistory.length; index++) {
+        const pokemon = searchHistory[index];
+        let newTab = $(`<li class="tab col s12">`)
+        let newLink = $(`<a href="#${pokemon}">${pokemon}</a>`)
+        newTab.append(newLink);
+        newTab.on('click', function () {
+            // Remove the tab and move it to the top of the tabs list
+            newTab.detach().prependTo(tabs);
+            // Update history to move the clicked item to the top
+            searchHistory.splice(index, 1);
+            searchHistory.unshift(pokemon);
+            localStorage.setItem('searchHistory', JSON.stringify(searchHistory))
+            // fetch the data for that pokemon and update the page
+            let data = handleFetchingData(pokemon);
+            handleAddingPokemonData(data)
+        });
+        tabs.append(newTab);
+    }
+}
+
 // add the pokemon data if the user has inputted anything yet, or there is a search in local storage.
 // If not, display a message asking the user to search a pokemon.
 if (data) {
-    noPokemonChosenEl.css('display', 'none')
-    handleAddingPokemonData(data)
-    
+    noPokemonChosenEl.css('display', 'none');
+    handleAddingPokemonData(data);
 } else {
-    resultsContainerEl.css('display', 'none')
+    resultsContainerEl.css('display', 'none');
+    noPokemonChosenEl.css('display', 'block');
+}
+
+if (searchHistory) {
+    handleAddingTabs(searchHistory);
 }
