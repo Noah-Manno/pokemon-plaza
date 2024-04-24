@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/nav.css">
     <link rel="stylesheet" href="./assets/css/results.css">
 </head>
+
 <body>
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
     <nav class="logo-nav">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center"><img class="logo" src="./assets/images/pokeplazalogo.png" alt="pokeplaza logo"></a>
+            <a href="#" class="brand-logo center"><img class="logo" src="./assets/images/pokeplazalogo.png"
+                    alt="pokeplaza logo"></a>
         </div>
     </nav>
     <nav class="links-nav">
         <div class="nav-wrapper">
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="#">Your Team</a></li>
@@ -34,244 +38,247 @@
                 <li class="active"><a href="./results.html">Pokédex</a></li>
             </ul>
         </div>
-      </nav>
-    
-      <ul class="sidenav" id="mobile-demo">
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
         <li><a href="#">Home</a></li>
         <li><a href="#">Your Team</a></li>
         <li><a href="#">Stat Calculator</a></li>
         <li><a href="#">Pokédex</a></li>
-      </ul>
+    </ul>
 
 
-<h1>Your Ultimate Pokémon Companion Site</h1>
+    <h1>Your Ultimate Pokémon Companion Site</h1>
 
-<div id="container" class="row">
-    <!-- <div class="col s12">
-        <ul id="tabs" class="tabs">
-            <li class="tab col s12"><a class="active" href="#search"></a></li>
-            <li class="tab col s12"><a href="#notsearch"></a></li>
-        </ul>
+<!-- SEARCH BAR -->
+    <nav class="row">
+        <div class="search-bar nav-wrapper col s10 offset-s1 m8 offset-m2">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
+    <div class="search">
+      <button id="submit" class="poke-search">Search Pokemon</button>
     </div>
-    <div id="search" class="col s12">
 
-        <div class="results-container row">
+<!-- No Results -->
+<div id="no-results" class="row">
+    <h2 class="col s12">No Pokemon Chosen Yet, Find One Using the Search Bar!</h2>
+</div>
+<!-- RESULTS -->
+        <div id="results"class="results-container row">
             <div class="basic-info col s8 offset-s2 m5 offset-m0 l3">
                 <div class="sprite-container">
-                    <img class="sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="pokemon sprite">
+                    <img id="sprite" class="sprite"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+                        alt="pokemon sprite">
                 </div>
-                <h2>Bulbasaur</h2>
-                <div class="types row">
-                    <h3 class="grass col s5 ">Grass</h3>
-                    <h3 class="poison col s5 offset-s2">Poison</h3>
+                <h2 id="pokemon-name">Bulbasaur</h2>
+                <div id="type-container" class="types row">
+                    
                 </div>
-                <div class="abilities">
+                <div id="abilities-container"class="abilities">
                     <h4>Abilities</h4>
-                    <ol>
+                    <ol id="abilities-list">
                         <li>Blaze</li>
                         <li>Solar-Power</li>
                     </ol>
                 </div>
             </div>
-                <div class="detail-info col s12 m7 l9"> 
-                    <div class="row">
-               
-                        <ul class="stats col s12 l6">
-                            <div class="stat-header">
-                                <h2>Stats</h2>
-                            </div>
-                            <li>
-                                <label class="stat-titles" for="hp">Sp. Atk</label> 
-                                <div class="progress-container row">
-                                    <div class="stat-value-container col s2">
-                                        <span class="stat-value">100</span> 
-                                    </div>
-                                    <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>   
-                                </div>
-                            </li>
-                            <li>
-                                <label class="stat-titles" for="hp">Sp. Atk</label> 
-                                <div class="progress-container row">
-                                    <div class="stat-value-container col s2">
-                                        <span class="stat-value">100</span> 
-                                    </div>
-                                    <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>   
-                                </div>
-                            </li>
-                            <li>
-                                <label class="stat-titles" for="hp">Sp. Atk</label> 
-                                <div class="progress-container row">
-                                    <div class="stat-value-container col s2">
-                                        <span class="stat-value">100</span> 
-                                    </div>
-                                    <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>   
-                                </div>
-                            </li>
-                            <li>
-                                <label class="stat-titles" for="hp">Sp. Atk</label> 
-                                <div class="progress-container row">
-                                    <div class="stat-value-container col s2">
-                                        <span class="stat-value">100</span> 
-                                    </div>
-                                    <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>   
-                                </div>
-                            </li>
-                            <li>
-                                <label class="stat-titles" for="hp">Sp. Atk</label> 
-                                <div class="progress-container row">
-                                    <div class="stat-value-container col s2">
-                                        <span class="stat-value">100</span> 
-                                    </div>
-                                    <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>   
-                                </div>
-                            </li>
-                            <li>
-                                <label class="stat-titles" for="hp">Sp. Atk</label> 
-                                <div class="progress-container row">
-                                    <div class="stat-value-container col s2">
-                                        <span class="stat-value">100</span> 
-                                    </div>
-                                    <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>   
-                                </div>
-                            </li>
-                        </ul>
+            <div class="detail-info col s12 m7 l9">
+                <div class="row">
 
-      
-                        <div class="moves col s12 l6">
-                            <div class="stat-header">
-                                <h2>Moves</h2>
+                    <ul id="stats-list"class="stats col s12 l6">
+                        <div class="stat-header">
+                            <h2>Stats</h2>
+                        </div>
+                        <li id="hpListItem">
+                            <label class="stat-titles" for="hp">Sp. Atk</label>
+                            <div class="progress-container row">
+                                <div class="stat-value-container col s2">
+                                    <span class="stat-value">100</span>
+                                </div>
+                                <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>
                             </div>
-                            <table class="centered highlight">
-                                <thead>
+                        </li>
+                        <li id="attackListItem">
+                            <label class="stat-titles" for="hp">Sp. Atk</label>
+                            <div class="progress-container row">
+                                <div class="stat-value-container col s2">
+                                    <span class="stat-value">100</span>
+                                </div>
+                                <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>
+                            </div>
+                        </li>
+                        <li id="defenseListItem">
+                            <label class="stat-titles" for="hp">Sp. Atk</label>
+                            <div class="progress-container row">
+                                <div class="stat-value-container col s2">
+                                    <span class="stat-value">100</span>
+                                </div>
+                                <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>
+                            </div>
+                        </li>
+                        <li id="spAtkListItem">
+                            <label class="stat-titles" for="hp">Sp. Atk</label>
+                            <div class="progress-container row">
+                                <div class="stat-value-container col s2">
+                                    <span class="stat-value">100</span>
+                                </div>
+                                <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>
+                            </div>
+                        </li>
+                        <li id="spDefListItem"> 
+                            <label class="stat-titles" for="hp">Sp. Atk</label>
+                            <div class="progress-container row">
+                                <div class="stat-value-container col s2">
+                                    <span class="stat-value">100</span>
+                                </div>
+                                <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>
+                            </div>
+                        </li>
+                        <li id="speedListItem">
+                            <label class="stat-titles" for="hp">Sp. Atk</label>
+                            <div class="progress-container row">
+                                <div class="stat-value-container col s2">
+                                    <span class="stat-value">100</span>
+                                </div>
+                                <progress class="stat-bars col s10" id="hp" value="100" max="255"></progress>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                    <div class="moves col s12 l6">
+                        <div class="stat-header">
+                            <h2>Moves</h2>
+                        </div>
+                        <table class="centered highlight">
+                            <thead>
                                 <tr>
                                     <th>Move</th>
                                     <th>Level</th>
                                     <th>Method of Learning</th>
                                 </tr>
-                                </thead>
-                        
-                                <tbody>
-                                <tr>
-                                    <td>Tackle</td>
-                                    <td>0</td>
-                                    <td>Machine</td>
-                                </tr>
-                                <tr>
-                                    <td>Tail Whip</td>
-                                    <td>3</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Take Down</td>
-                                    <td>5</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Tackle</td>
-                                    <td>0</td>
-                                    <td>Machine</td>
-                                </tr>
-                                <tr>
-                                    <td>Tail Whip</td>
-                                    <td>3</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Take Down</td>
-                                    <td>5</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Tackle</td>
-                                    <td>0</td>
-                                    <td>Machine</td>
-                                </tr>
-                                <tr>
-                                    <td>Tail Whip</td>
-                                    <td>3</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Take Down</td>
-                                    <td>5</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Tackle</td>
-                                    <td>0</td>
-                                    <td>Machine</td>
-                                </tr>
-                                <tr>
-                                    <td>Tail Whip</td>
-                                    <td>3</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Take Down</td>
-                                    <td>5</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Tackle</td>
-                                    <td>0</td>
-                                    <td>Machine</td>
-                                </tr>
-                                <tr>
-                                    <td>Tail Whip</td>
-                                    <td>3</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Take Down</td>
-                                    <td>5</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Tackle</td>
-                                    <td>0</td>
-                                    <td>Machine</td>
-                                </tr>
-                                <tr>
-                                    <td>Tail Whip</td>
-                                    <td>3</td>
-                                    <td>Level-up</td>
-                                </tr>
-                                <tr>
-                                    <td>Take Down</td>
-                                    <td>5</td>
-                                    <td>Level-up</td>
-                                </tr>
-                        
-                                </tbody>
-                            </table>
-                        </div>
+                            </thead>
 
+                            <tbody id="moves-table">
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Tackle</td>
+                                    <td>0</td>
+                                    <td>Machine</td>
+                                </tr>
+                                <tr>
+                                    <td>Tail Whip</td>
+                                    <td>3</td>
+                                    <td>Level-up</td>
+                                </tr>
+                                <tr>
+                                    <td>Take Down</td>
+                                    <td>5</td>
+                                    <td>Level-up</td>
+                                </tr>
 
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
         </div>
 
-    </div>
-    <div id="notsearch" class="col s12"></div> -->
-  </div>
+        <script src="./assets/js/jquery-3.7.1.slim.min.js"></script>
+        <script src="./assets/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.carousel').carousel();
+            });
 
-  <h5 id="instructions">Choose A Pokemon to Get Started!</h5>
-    
-    <script src="./assets/js/jquery-3.7.1.slim.min.js"></script>
-    <script src="./assets/js/materialize.min.js"></script>
-    <script>
-        $(document).ready(function(){
-        $('.carousel').carousel();
-        });
-
-        $(document).ready(function(){
-        $('.sidenav').sidenav();
-        });
-
-        $(document).ready(function(){
-        $('.tabs').tabs();
-        });
-    </script>
-    <script src="./assets/js/pokedex.js"></script>
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+        </script>
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/pokedex.js"></script>
 </body>
+
 </html>
