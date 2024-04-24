@@ -62,15 +62,21 @@ h2 {
     font-family: var(--navbarfont);
     font-size: 2em;
     text-decoration: white underline;
+    text-transform: capitalize;
 }
 
 h3 {
     text-align: center;
     color: white;
     font-family: var(--navbarfont);
-    font-size: .8em;
+    font-size: .9em;
     border: 1px solid white;
     border-radius: 16px;
+}
+
+.type {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important; 
 }
 
 .grass {

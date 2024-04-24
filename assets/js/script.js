@@ -6,6 +6,7 @@ pokemonSubmitEl.on('click', handleSubmitPokemon)
 function handleSubmitPokemon() {
     // Get the User Input Pokemon
     let newPokemonSearch = pokemonSearchEl.val()
+    // Check if there is any input in the search bar
     if (newPokemonSearch) {
     console.log(newPokemonSearch);
     // Grab the Search History From Local Storage
@@ -20,10 +21,13 @@ function handleSubmitPokemon() {
                 return response.json();
         })
         .then(function(data) {
+            // if the fetch request returns anything check if the pokemon is in search history already
+            // if it isn't in search history, add it. 
             if (!searchHistory.includes(newPokemonSearch)) {
                 searchHistory.unshift(newPokemonSearch);
                 localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
             }
+            // update the currentPokemonData with the user search input and redirect to the results page
             localStorage.setItem('currentPokemonData', JSON.stringify(data));
             window.location.href = 'results.html'
         })
