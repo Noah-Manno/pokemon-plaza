@@ -1,5 +1,7 @@
 let pokemonSearchEl = $('#search')
 let pokemonSubmitEl = $('#submit')
+// Grab the Search History From Local Storage
+let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
 pokemonSubmitEl.on('click', handleSubmitPokemon)
 
@@ -9,10 +11,11 @@ function handleSubmitPokemon() {
     // Check if there is any input in the search bar
     if (newPokemonSearch) {
     console.log(newPokemonSearch);
-    // Grab the Search History From Local Storage
-    let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-    // If it has not been searched before, add it to the search history and update storage
-        let url = `https://pokeapi.co/api/v2/pokemon/${newPokemonSearch}/`
+    handleFetchingData(newPokemonSearch)
+}
+}
+function handleFetchingData(newPokemonSearch) {
+let url = `https://pokeapi.co/api/v2/pokemon/${newPokemonSearch}/`
         fetch(url) 
         .then(function (response) {
             if (!response.ok) {
@@ -35,5 +38,3 @@ function handleSubmitPokemon() {
             console.error('Error fetching data:', error);
         });
 }
-}
-

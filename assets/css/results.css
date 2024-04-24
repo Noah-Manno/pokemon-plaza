@@ -183,3 +183,7 @@ tr {
 .moves:hover {
     border: 1px solid white;
 }
+
+#no-results {
+    display: none;
+}
