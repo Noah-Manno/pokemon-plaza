@@ -6,17 +6,21 @@ const noPokemonChosenEl = $('#no-results')
 const sprite = $('#sprite')
 const pokemonName = $('#pokemon-name')
 const typeContainerEl = $('#type-container')
-const abilitiesContainerEl = $('#abilities-container')
 const abilitiesListEl = $('#abilities-list')
 
 //declaring detail information elements
-const statsListEl = $('#stats-list')
-const hpListItemEl = $('#hpListItem')
-const attackListItemEl = $('#attackListItem')
-const defenseListItemEl = $('#defenseListItem')
-const spAtkListItemEl = $('#spAtkListItem')
-const spDefListItemEl = $('#spDefListItem')
-const speedListItemEl = $('#speedListItem')
+const hpElVal = $('#hpVal')
+const hpEl = $('#hp')
+const attackElVal = $('#attackVal')
+const attackEl = $('#attack')
+const defenseElVal = $('#defenseVal')
+const defenseEl = $('#defense')
+const spAtkElVal = $('#spAtkVal')
+const spAtkEl = $('#spAtk')
+const spDefElVal = $('#spDefVal')
+const spDefEl = $('#spDef')
+const speedElVal = $('#speedVal')
+const speedEl = $('#speed')
 const movesTableBodyEl = $('#moves-table')
 
 // Grab pokemon data from local storage 
@@ -33,8 +37,55 @@ pokemonName.text(data.name)
 let types = data.types
 types.forEach(type => {
     let typeName = type.type.name;
-    let newType = $(`<h3 class="${typeName} col s6 type">${typeName}</h3>`);
+    let newType = $(`<h3 class="${typeName} type">${typeName}</h3>`);
+// append it to the container
     typeContainerEl.append(newType);
+});
+// adding abilities to the list
+let abilities = data.abilities;
+abilities.forEach(ability => {
+    let abilityName = ability.ability.name;
+    let newAbility = $(`<li>${abilityName}</li>`);
+//append it to the list
+    abilitiesListEl.append(newAbility);
+});
+let stats = data.stats
+hpElVal.text(stats[0].base_stat)
+attackElVal.text(stats[1].base_stat)
+defenseElVal.text(stats[2].base_stat)
+spAtkElVal.text(stats[3].base_stat)
+spDefElVal.text(stats[4].base_stat)
+speedElVal.text(stats[5].base_stat)
+hpEl.attr('value', `${stats[0].base_stat}`)
+attackEl.attr('value', `${stats[1].base_stat}`)
+defenseEl.attr('value', `${stats[2].base_stat}`)
+spAtkEl.attr('value', `${stats[3].base_stat}`)
+spDefEl.attr('value', `${stats[4].base_stat}`)
+speedEl.attr('value', `${stats[5].base_stat}`)
+
+// grab the moves from the data 
+let moves = data.moves
+moves.sort((a, b) => {
+    // First, sort by move learn method
+    if (a.version_group_details[0].move_learn_method.name !== b.version_group_details[0].move_learn_method.name) {
+        return a.version_group_details[0].move_learn_method.name.localeCompare(b.version_group_details[0].move_learn_method.name);
+    } else {
+        // If move learn method is the same, sort by level learned at
+        return a.version_group_details[0].level_learned_at - b.version_group_details[0].level_learned_at;
+    }
+});
+moves.forEach(move => {
+    let moveName = move.move.name;
+    let level = move.version_group_details[0].level_learned_at;
+    let method = move.version_group_details[0].move_learn_method.name;
+    let tr = $('<tr>');
+    let moveTd = $('<td>').text(moveName);
+    let levelTd = $('<td>').text(level);
+    let methodTd = $('<td>').text(method)
+    tr.append(moveTd);
+    tr.append(levelTd);
+    tr.append(methodTd);
+    movesTableBodyEl.append(tr);
 });
 }
 
