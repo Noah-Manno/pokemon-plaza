@@ -5,6 +5,7 @@ const noPokemonChosenEl = $('#no-results')
 // declaring front and back links
 const back = $('#back')
 const forward = $('#forward')
+const current = $('#current')
 
 // declaring basic information elements
 const sprite = $('#sprite')
@@ -40,6 +41,8 @@ function handleAddingPokemonData(data) {
 sprite.attr('src', `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`)
 // Add the pokemon's name
 pokemonName.text(data.name)
+current.text(data.name)
+
 // create the type icons
 let types = data.types
 types.forEach(type => {
