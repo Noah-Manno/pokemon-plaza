@@ -187,3 +187,23 @@ tr {
 #no-results {
     display: none;
 }
+
+.front-and-back {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.fbLinks {
+    font-family: var(--navbarfont);
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.fbLinks:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px;
+    color: aqua;
+}

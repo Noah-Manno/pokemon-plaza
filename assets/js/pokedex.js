@@ -2,6 +2,10 @@
 const resultsContainerEl = $('#results')
 const noPokemonChosenEl = $('#no-results')
 
+// declaring front and back links
+const back = $('#back')
+const forward = $('#forward')
+
 // declaring basic information elements
 const sprite = $('#sprite')
 const pokemonName = $('#pokemon-name')
@@ -114,11 +118,66 @@ function handleAddingTabs(searchHistory) {
     }
 }
 
+function handleFrontAndBackLinks(data) {
+    let id = data.id;
+    backId = id - 1;
+    frontId = id + 1;
+
+    handleFetchingFrontAndBackData(backId)
+        .then(function(backData) {
+            backName = backData.name
+            back.text(`<-${backName}`)
+            back.on('click', function() {
+                searchHistory.unshift(backName);
+                localStorage.setItem('searchHistory', JSON.stringify(searchHistory))
+                // fetch the data for that pokemon and update the page
+                let data = handleFetchingData(backName);
+                handleAddingPokemonData(data)
+            })
+        })
+        .catch(function(error) {
+            console.error('Error fetching back data:', error);
+        });
+
+    handleFetchingFrontAndBackData(frontId)
+        .then(function(frontData) {
+            frontName = frontData.name
+            forward.text(`${frontName}->`);
+            forward.on('click', function() {
+                searchHistory.unshift(frontName);
+                localStorage.setItem('searchHistory', JSON.stringify(searchHistory))
+                // fetch the data for that pokemon and update the page
+                let data = handleFetchingData(frontName);
+                handleAddingPokemonData(data)
+            })
+        })
+        .catch(function(error) {
+            console.error('Error fetching front data:', error);
+        });
+}
+
+function handleFetchingFrontAndBackData(id) {
+    let url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
+    return fetch(url)
+        .then(function(response) {
+            if (!response.ok) {
+                throw response.json();
+            }
+            return response.json();
+        })
+        .then(function(data) {
+            return data;
+        })
+        .catch(function(error) {
+            console.error('Error fetching data:', error);
+        });
+}
 // add the pokemon data if the user has inputted anything yet, or there is a search in local storage.
 // If not, display a message asking the user to search a pokemon.
 if (data) {
     noPokemonChosenEl.css('display', 'none');
     handleAddingPokemonData(data);
+    handleFrontAndBackLinks(data)
 } else {
     resultsContainerEl.css('display', 'none');
     noPokemonChosenEl.css('display', 'block');
