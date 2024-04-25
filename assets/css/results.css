@@ -117,6 +117,26 @@ h3 {
     color: black;
 }
 
+.electric {
+    background-color: yellow;
+    color: black;
+}
+
+.fairy {
+    background-color: pink;
+    color: black;
+}
+
+.rock {
+    background-color: brown;
+    color: black;
+}
+
+.steel {
+    background-color: steelblue;
+    color: black;
+}
+
 h4 {
     color: white;
     font-family: var(--navbarfont);
