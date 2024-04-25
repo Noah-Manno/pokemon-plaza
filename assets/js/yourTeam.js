@@ -1,11 +1,12 @@
 const noPokemonChosenEl = $('#no-results');
 const yourTeamContainer = $('#team-container');
-const yourTeam = JSON.parse(localStorage.getItem('yourTeam'));
+const yourTeam = JSON.parse(localStorage.getItem('yourTeam')) || [];
 console.log(yourTeam);
 
 if (yourTeam) {
     handleAddingYourTeam(yourTeam);
-} else {
+} 
+if (!yourTeam || yourTeam.length === 0) {
     noPokemonChosenEl.css('display', 'block');
 }
 

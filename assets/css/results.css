@@ -96,7 +96,16 @@ h3 {
 }
 
 .water {
+    background-color: blue;
+}
+
+.dragon {
+    background-color: var(--backgroundBlue);
+}
+
+.ice {
     background-color: aqua;
+    color: black
 }
 
 .normal {
