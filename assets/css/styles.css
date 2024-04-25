@@ -6,11 +6,6 @@
     --gradient: linear-gradient(var(--backgroundDark),var(--backgroundBlue));
 }
 
-.search {
-    display: flex;
-    justify-content: center;
-}
-
 .poke-search {
     color: white;
     font-family: var(--navbarfont);
@@ -19,7 +14,19 @@
     background-color: transparent;
     border: 1px dashed black;
     padding: 20px 40px;
-    margin-bottom: 50px;
+    margin: 10px auto;
+}
+
+
+#search-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: unset;
+}
+
+#search-form .input-field {
+    height: unset;
 }
 
 .search-bar {
