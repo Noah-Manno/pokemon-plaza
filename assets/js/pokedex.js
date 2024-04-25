@@ -43,6 +43,22 @@ sprite.attr('src', `https://raw.githubusercontent.com/PokeAPI/sprites/master/spr
 pokemonName.text(data.name)
 current.text(data.name)
 
+let addToTeamButton = $('#add-to-team')
+let checkMark = $('#checkIcon')
+
+let yourTeam = JSON.parse(localStorage.getItem('yourTeam')) || [];
+if (yourTeam.includes(data.name)) {
+    checkMark.css('display', 'inline')
+}
+// add functionality to button
+addToTeamButton.on('click', function() {
+    if(!yourTeam.includes(data.name)) {
+    yourTeam.unshift(data.name)
+    localStorage.setItem('yourTeam', JSON.stringify(yourTeam))
+    checkMark.css('display', 'inline')
+    }
+})
+
 // create the type icons
 let types = data.types
 types.forEach(type => {
