@@ -3,7 +3,7 @@ let pokemonSubmitEl = $('#submit')
 // Grab the Search History From Local Storage
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-pokemonSubmitEl.on('click', handleSubmitPokemon)
+pokemonSubmitEl.on('click touchstart', handleSubmitPokemon)
 
 function handleSubmitPokemon() {
     // Get the User Input Pokemon
