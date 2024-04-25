@@ -1,0 +1,27 @@
+:root {
+    --backgroundDark: #040405;
+    --backgroundBlue: #0e149f;
+    --navbarfont: "Orbitron", sans-serif;
+    --openfont: "Open Sans", sans-serif;
+    --gradient: linear-gradient(var(--backgroundDark),var(--backgroundBlue));
+}
+
+.team-member {
+    border: 1px solid white;
+    border-radius: 16px;
+    margin-bottom: 5vh;
+}
+
+.noTeamMember-Container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px
+}
+
+.noTeamMember {
+    font-family: var(--navbarfont);
+    text-align: center;
+    background: var(--backgroundBlue);
+    color: white;
+}

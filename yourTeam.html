@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Plaza</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/results.css">
+    <link rel="stylesheet" href="./assets/css/yourTeam.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="logo-nav">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center"><img class="logo" src="./assets/images/pokeplazalogo.png"
+                    alt="pokeplaza logo"></a>
+        </div>
+    </nav>
+    <nav class="links-nav">
+        <div class="nav-wrapper">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Your Team</a></li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">Stat Calculator</a></li>
+                <li class="active"><a href="./results.html">Pokédex</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Your Team</a></li>
+        <li><a href="#">Stat Calculator</a></li>
+        <li><a href="results.html">Pokédex</a></li>
+    </ul>
+
+
+    <h1>Your Ultimate Pokémon Companion Site</h1>
+
+<!-- SEARCH BAR -->
+    <nav class="row">
+        <div class="search-bar nav-wrapper col s10 offset-s1 m8 offset-m2">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
+    <div class="search">
+      <button id="submit" class="poke-search">Search Pokemon</button>
+    </div>
+
+<!-- No Results -->
+<div id="no-results" class="row">
+    <h2 class="col s12">No Pokemon Chosen Yet, Find One Using the Search Bar!</h2>
+</div>
+
+<!-- Your Team -->
+<div class="row your-team-container">
+    <div class="col s12 m6 team-member">
+        <div class="pokemon-results-container row">
+            <div class="col s4 img-container">
+                <img src="" alt="pokemon sprite">
+            </div>
+            <div class="col s8 additional-info">
+                <h2>Pokemon Name</h2>
+                <div id="type-container" class="types">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script src="./assets/js/jquery-3.7.1.slim.min.js"></script>
+        <script src="./assets/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.carousel').carousel();
+            });
+
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+
+        </script>
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/yourTeam.js"></script>
+</body>
+
+</html>

@@ -46,6 +46,7 @@ current.text(data.name)
 
 let addToTeamButton = $('#add-to-team')
 let checkMark = $('#checkIcon')
+const teamIsFull = $('#team-is-full')
 
 let yourTeam = JSON.parse(localStorage.getItem('yourTeam')) || [];
 if (yourTeam.includes(data.name)) {
@@ -53,10 +54,13 @@ if (yourTeam.includes(data.name)) {
 }
 // add functionality to button
 addToTeamButton.on('click', function() {
-    if(!yourTeam.includes(data.name)) {
+    if(!yourTeam.includes(data.name) && yourTeam.length < 6) {
     yourTeam.unshift(data.name)
     localStorage.setItem('yourTeam', JSON.stringify(yourTeam))
     checkMark.css('display', 'inline')
+    }
+    if(yourTeam.length > 5 && !yourTeam.includes(data.name)) {
+        teamIsFull.css('display', 'inline')
     }
 })
 
@@ -166,8 +170,10 @@ function handleFrontAndBackLinks(data) {
             frontName = frontData.name
             forward.text(`${frontName}->`);
             forward.on('click', function() {
+                if (!searchHistory.includes(frontData.name)) {
                 searchHistory.unshift(frontName);
                 localStorage.setItem('searchHistory', JSON.stringify(searchHistory))
+                }
                 // fetch the data for that pokemon and update the page
                 let data = handleFetchingData(frontName);
                 handleAddingPokemonData(data)
