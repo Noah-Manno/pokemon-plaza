@@ -39,6 +39,8 @@ let url = `https://pokeapi.co/api/v2/pokemon/${newPokemonSearch}/`
         });
 }
 
+
+//RANDOMIZE THE CAROUSEL POKEMON
   // Generate a random number between 1 and 9
   const randomId = Math.floor(Math.random() * 590) + 1;
 
