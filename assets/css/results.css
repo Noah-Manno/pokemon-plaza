@@ -137,6 +137,30 @@ h3 {
     color: black;
 }
 
+.bug {
+    background-color: lightgreen;
+    color: black;
+}
+
+.fighting {
+    background-color: maroon;
+}
+
+.ground {
+    background-color: burlywood;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.psychic {
+    background-color: magenta;
+    color: black;
+}
+
 h4 {
     color: white;
     font-family: var(--navbarfont);
