@@ -1,10 +1,10 @@
 let pokemonSearchEl = $('#search')
 let pokemonSubmitEl = $('#submit')
-let searchForm = $('#search-form')
+let searchForm = $('#searchForm')
 // Grab the Search History From Local Storage
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-// pokemonSubmitEl.on('click', handleSubmitPokemon)
+pokemonSubmitEl.on('click touchstart', handleSubmitPokemon)
 
 searchForm.on('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
