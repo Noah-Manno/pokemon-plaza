@@ -26,8 +26,8 @@ let url = `https://pokeapi.co/api/v2/pokemon/${newPokemonSearch}/`
         .then(function(data) {
             // if the fetch request returns anything check if the pokemon is in search history already
             // if it isn't in search history, add it. 
-            if (!searchHistory.includes(newPokemonSearch)) {
-                searchHistory.unshift(newPokemonSearch);
+            if (!searchHistory.includes(data.name)) {
+                searchHistory.unshift(data.name);
                 localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
             }
             // update the currentPokemonData with the user search input and redirect to the results page

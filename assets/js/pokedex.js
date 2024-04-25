@@ -34,6 +34,7 @@ let tabs = $('#tabs')
 // Grab pokemon data from local storage 
 let data = JSON.parse(localStorage.getItem('currentPokemonData'))
 let serchHistory = JSON.parse(localStorage.getItem('searchHistory'))
+
 // Adds the pokemon data to the page
 function handleAddingPokemonData(data) {
     console.log(data)
@@ -147,8 +148,10 @@ function handleFrontAndBackLinks(data) {
             backName = backData.name
             back.text(`<-${backName}`)
             back.on('click', function() {
+                if (!searchHistory.includes(backData.name)) {
                 searchHistory.unshift(backName);
                 localStorage.setItem('searchHistory', JSON.stringify(searchHistory))
+                }
                 // fetch the data for that pokemon and update the page
                 let data = handleFetchingData(backName);
                 handleAddingPokemonData(data)
