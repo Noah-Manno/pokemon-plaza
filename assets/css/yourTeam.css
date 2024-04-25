@@ -1,0 +1,27 @@
+:root {
+    --backgroundDark: #040405;
+    --backgroundBlue: #0e149f;
+    --navbarfont: "Orbitron", sans-serif;
+    --openfont: "Open Sans", sans-serif;
+    --gradient: linear-gradient(var(--backgroundDark),var(--backgroundBlue));
+}
+
+.team-member {
+    border: 1px solid white;
+    border-radius: 16px;
+    margin-bottom: 5vh;
+}
+
+.sprite-yourTeam {
+    width: 200px;
+    height: 200px;
+}
+
+.remove {
+    text-align: center;
+    font-family: var(--navbarfont);
+    background-color: var(--backgroundBlue);
+    color: white;
+    margin-top: 30px;
+
+}

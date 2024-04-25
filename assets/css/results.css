@@ -236,6 +236,17 @@ tr {
     display: none;
 }
 
+.team-is-full {
+    font-family: var(--openfont);
+    color: white;
+    font-style: italic;
+    font-weight: 100;
+}
+
+#team-is-full {
+    display: none;
+}
+
 @media only screen and (min-width: 601px) {
     .fbLinks {
         font-size: 20px;
