@@ -210,7 +210,7 @@ tr {
 }
 
 
-.current {
+#current {
     font-weight: 800;
     font-size: 18px;
 }
@@ -221,7 +221,7 @@ tr {
         padding: 10px 20px;
     }
 
-    .current {
+    #current {
         font-size: 30px;
     }
 }
