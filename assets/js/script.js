@@ -38,3 +38,16 @@ let url = `https://pokeapi.co/api/v2/pokemon/${newPokemonSearch}/`
             console.error('Error fetching data:', error);
         });
 }
+
+  // Generate a random number between 1 and 9
+  const randomId = Math.floor(Math.random() * 590) + 1;
+
+  // Update the source of the image for each carousel item based on the randomly generated ID
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  carouselItems.forEach((item, index) => {
+      const newImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomId + index}.png`;
+      const image = item.querySelector('img');
+      image.setAttribute('src', newImageUrl);
+      item.setAttribute('href', `#${randomId + index}!`);
+      item.setAttribute('id', `pokemon${index + 1}`);
+  });
