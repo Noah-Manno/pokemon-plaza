@@ -57,20 +57,13 @@
   <a class="carousel-item" id="pokemon9" href="#nine!"><img alt="pokemon sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"></a>
 </div>
 
-      <nav class="row">
-        <div class="search-bar nav-wrapper col s10 offset-s1 m8 offset-m2">
-          <form id="searchForm">
-            <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
+      <form id="search-form">
+        <label class="search-title"for="search">Search for a pokemon</label>
+        <div class="input-container">
+        <input id="search" type="text">  
         </div>
-      </nav>
-    <div class="search">
-      <button id="submit" class="poke-search" type="button">Search Pokemon</button>
-    </div>
+      <button id="submit" class="poke-search" type="submit">Search Pokemon</button>
+  </form>
     
     <script src="./assets/js/jquery-3.7.1.slim.min.js"></script>
     <script src="./assets/js/materialize.min.js"></script>
