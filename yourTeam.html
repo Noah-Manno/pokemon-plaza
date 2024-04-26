@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/results.css">
     <link rel="stylesheet" href="./assets/css/yourTeam.css">
 </head>
@@ -51,20 +52,13 @@
     <h1>Your Ultimate Pokémon Companion Site</h1>
 
 <!-- SEARCH BAR -->
-    <nav class="row">
-        <div class="search-bar nav-wrapper col s10 offset-s1 m8 offset-m2">
-          <form>
-            <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
-        </div>
-      </nav>
-    <div class="search">
-      <button id="submit" class="poke-search" type="button">Search Pokemon</button>
+<form id="search-form">
+    <label class="search-title"for="search">Search for a pokemon</label>
+    <div class="input-container">
+    <input id="search" type="text">  
     </div>
+  <button id="submit" class="poke-search" type="submit">Search Pokemon</button>
+</form>
 
 <!-- No Results -->
 <div id="no-results" class="row">

@@ -6,9 +6,26 @@
     --gradient: linear-gradient(var(--backgroundDark),var(--backgroundBlue));
 }
 
-.search {
+.input-container {
+    width: 70%;
+}
+
+.search-title {
+    font-family: var(--navbarfont);
+}
+
+form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+}
+
+#search {
+    background-color: var(--backgroundBlue);
+    border-radius: 36px;
+    text-align: center;
+    color: white;
 }
 
 .poke-search {
@@ -19,26 +36,9 @@
     background-color: transparent;
     border: 1px dashed black;
     padding: 20px 40px;
-    margin-bottom: 50px;
-}
-
-.search-bar {
-    border-radius: 36px;
-    background-color: #0e149f;
 }
 
 .poke-search:hover {
-    background-color: #040405;
     cursor: pointer;
-}
-
-.input-field input[type=search] {
-    color: white;
-}
-
-.input-field input[type=search]:focus:not(.browser-default) {
-    border-radius: 36px;
-}
-input[type=search]:not(.browser-default) {
-    border-radius: 36px;
+    background-color: black;
 }
