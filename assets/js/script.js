@@ -37,7 +37,7 @@ let url = `https://pokeapi.co/api/v2/pokemon/${newPokemonSearch}/`
             }
             // update the currentPokemonData with the user search input and redirect to the results page
             localStorage.setItem('currentPokemonData', JSON.stringify(data));
-            window.location.href = './results.html'
+            window.location.href = 'https://noah-manno.github.io/pokemon-plaza/results.html'
         })
         .catch(function(error) {
             console.error('Error fetching data:', error);
