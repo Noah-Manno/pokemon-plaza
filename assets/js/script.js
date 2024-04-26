@@ -1,7 +1,6 @@
 let pokemonSearchEl = $('#search')
 let pokemonSubmitEl = $('#submit')
 let searchForm = $('#search-form')
-let button = ('#submit')
 // Grab the Search History From Local Storage
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
@@ -11,7 +10,6 @@ searchForm.on('submit', function(event) {
     handleSubmitPokemon();
 });
 
-button.on('touchend', handleSubmitPokemon())
 
 function handleSubmitPokemon() {
     // Get the User Input Pokemon
