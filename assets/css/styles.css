@@ -42,3 +42,8 @@ form {
     cursor: pointer;
     background-color: black;
 }
+
+.btn, .btn-large, .btn-small, .btn-flat {
+    height: unset;
+    line-height: unset;
+}
