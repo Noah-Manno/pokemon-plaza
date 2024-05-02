@@ -13,7 +13,7 @@ searchForm.on('submit', function(event) {
 
 function handleSubmitPokemon() {
     // Get the User Input Pokemon
-    let newPokemonSearch = pokemonSearchEl.val()
+    let newPokemonSearch = pokemonSearchEl.val().toLowerCase()
     // Check if there is any input in the search bar
     if (newPokemonSearch) {
     console.log(newPokemonSearch);
