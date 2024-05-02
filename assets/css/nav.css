@@ -6,6 +6,10 @@
     --gradient: linear-gradient(var(--backgroundDark),var(--backgroundBlue));
 }
 
+html {
+    background-color: var(--backgroundBlue);
+}
+
 body {
     background: var(--gradient);
     background-repeat: no-repeat;
