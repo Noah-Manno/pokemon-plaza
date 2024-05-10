@@ -68,7 +68,7 @@ addToTeamButton.on('click', function() {
 let types = data.types
 types.forEach(type => {
     let typeName = type.type.name;
-    let newType = $(`<h3 class="${typeName} type">${typeName}</h3>`);
+    let newType = $(`<h3 class="${typeName} type col s6">${typeName}</h3>`);
 // append it to the container
     typeContainerEl.append(newType);
 });
